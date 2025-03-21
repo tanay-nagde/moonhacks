@@ -29,7 +29,7 @@ import authRoutes from "./routes/auth";
 
 app.use("/auth", authRoutes);
 app.use("/api/user" , userrouter);
-app.use("/api/user" , clubrouter);
+app.use("/api/club" , clubrouter);
 app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
