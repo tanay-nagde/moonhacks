@@ -1,6 +1,6 @@
 import { Document, Model, model, Schema } from "mongoose";
 
-interface ITask {
+export interface ITask {
   clubId: string; // Foreign key to Clubs collection
   createdBy: string; // Foreign key to Users collection
   assignedTo: string; // Foreign key to Users collection
@@ -34,4 +34,4 @@ const TaskSchema = new Schema<ITaskDocument>(
   { timestamps: true } // Automatically adds createdAt & updatedAt
 );
 
-export const Task: ITaskModel = model<ITaskDocument>("Task", TaskSchema);
+export const TaskModel: ITaskModel = model<ITaskDocument>("Task", TaskSchema);

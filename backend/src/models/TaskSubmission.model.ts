@@ -1,6 +1,6 @@
 import { Document, Model, model, Schema } from "mongoose";
 
-interface ITaskSubmission {
+export interface ITaskSubmission {
   taskId: string; // Foreign key to Tasks collection
   submittedBy: string; // Foreign key to Users collection
   submissionText?: string | null; // Nullable text submission
@@ -34,7 +34,7 @@ const TaskSubmissionSchema = new Schema<ITaskSubmissionDocument>(
   { timestamps: false } // No need for automatic timestamps
 );
 
-export const TaskSubmission: ITaskSubmissionModel = model<ITaskSubmissionDocument>(
+export const TaskSubmissionModel: ITaskSubmissionModel = model<ITaskSubmissionDocument>(
   "TaskSubmission",
   TaskSubmissionSchema
 );
