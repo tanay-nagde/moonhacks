@@ -7,6 +7,7 @@ dotenv.config({ path: "./.env" });
 
 // 🔹 Enum for User Roles
 enum UserRole {
+  SUPERADMIN = "super-admin",
   ADMIN = "admin",
   SUBADMIN = "subadmin",
   MEMBER = "member",

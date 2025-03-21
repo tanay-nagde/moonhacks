@@ -1,7 +1,7 @@
 import express from "express";
 import passport from "passport";
 import { googleAuthCallback} from "../controllers/authController";
-import { authMiddleware } from "../middleware/authmiddleware";
+
 
 
 const router = express.Router();
@@ -18,12 +18,7 @@ router.get(
   passport.authenticate("google", { session: false }),
   googleAuthCallback
 );
-router.get("/dashboard", authMiddleware, (req, res) => {
-  res.json({
-    message: "Welcome to the protected dashboard!",
-    user: req.user, // User data from authMiddleware
-  });
-});
+
 
 // // Middleware to verify token
 // const verifyToken = (req: any, res: any, next: any) => {
