@@ -26,10 +26,15 @@ app.get("/", (req, res) => res.send("API is running..."));
 import userrouter from "./routes/user.route";
 import clubrouter from "./routes/club.route";
 import authRoutes from "./routes/auth";
+import taskRoutes from "./routes/task.router";
+import leaderboardRoutes from "./routes/leaderboard.route";
 
 app.use("/auth", authRoutes);
 app.use("/api/user" , userrouter);
 app.use("/api/club" , clubrouter);
+app.use("/api/task", taskRoutes);
+app.use("/api/leaderboard", leaderboardRoutes);
+
 app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

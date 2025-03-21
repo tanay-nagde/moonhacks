@@ -1,6 +1,6 @@
 import { Document, Model, model, Schema } from "mongoose";
 
-interface ILeaderboard {
+export interface ILeaderboard {
   userId: string; // Foreign key to Users collection
   totalPoints: number; // Total points accumulated by the user
   rank: number; // User's rank on the leaderboard
@@ -20,7 +20,7 @@ const LeaderboardSchema = new Schema<ILeaderboardDocument>(
   { timestamps: false } // No need for createdAt & updatedAt
 );
 
-export const Leaderboard: ILeaderboardModel = model<ILeaderboardDocument>(
+export const LeaderboardModel: ILeaderboardModel = model<ILeaderboardDocument>(
   "Leaderboard",
   LeaderboardSchema
 );

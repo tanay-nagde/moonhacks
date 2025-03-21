@@ -97,6 +97,6 @@
 - **Credits System** → Reward-based contributions and engagement tracking
 
 ---
-
-This document serves as a roadmap for the development of `Bolt AI` with a structured API and feature set. 🚀
+ ### fixes 
+ -  return next(new ApiError(404, "No leaderboard found for this club"));
 
