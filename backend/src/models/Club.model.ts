@@ -19,4 +19,4 @@ const ClubSchema = new Schema<IClubDocument>(
   },
   { timestamps: true }
 );
-export const Club: IClubModel = model<IClubDocument>("Club", ClubSchema);
+export const ClubModel: IClubModel = model<IClubDocument>("Club", ClubSchema);

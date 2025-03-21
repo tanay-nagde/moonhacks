@@ -1,14 +1,11 @@
-console.log("Hello World");
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import passport from "passport";
-import authRoutes from "./routes/auth";
 import { connectDB } from "./config/db";
 import "./config/passport"; 
 import { PORT } from "./utils/constants";
-import userrouter from "./routes/user.route";
 import { errorHandler } from "./middleware/ErrorHandler";
 dotenv.config({
     path: './.env'
@@ -25,8 +22,14 @@ connectDB();
 
 app.get("/", (req, res) => res.send("API is running..."));
 
+// Routes
+import userrouter from "./routes/user.route";
+import clubrouter from "./routes/club.route";
+import authRoutes from "./routes/auth";
+
 app.use("/auth", authRoutes);
 app.use("/api/user" , userrouter);
+app.use("/api/user" , clubrouter);
 app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
